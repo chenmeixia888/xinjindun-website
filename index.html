@@ -2,424 +2,605 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="福建鑫金顿电气有限公司 - 专业监控立杆、对讲立柱、交通设施杆件、智慧综合杆生产厂家，厂家直供，支持定制，全国发货。">
-<meta name="keywords" content="监控立杆,对讲立柱,交通信号灯杆,龙门架,智慧综合杆,热镀锌,福建,泉州,厂家直供">
-<meta property="og:title" content="福建鑫金顿电气有限公司 - 专业杆件制造商">
-<meta property="og:description" content="监控立杆、对讲立柱、交通设施杆件厂家直供，支持定制，全国发货。">
-<title>福建鑫金顿电气有限公司 - 专业杆件制造商</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>福建鑫金顿电气有限公司 – 官方网站</title>
+<meta name="description" content="福建鑫金顿电气有限公司，专业生产对讲立柱、监控立杆、交通设施杆件、监控箱/配电箱、变电站配套钢架，工厂直营，质量可靠。">
+<style>
+/* ============================================================
+   全局 Reset & 变量
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue:   #1a3a6b;
+  --accent: #e8a020;
+  --gray:   #f5f5f5;
+  --text:   #222;
+  --light:  #fff;
+  --radius: 6px;
+  --shadow: 0 4px 18px rgba(0,0,0,.13);
+  --trans:  .22s ease;
+}
+html { scroll-behavior: smooth; }
+body { font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif; color: var(--text); background:#fff; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   导航栏
+============================================================ */
+header {
+  position: sticky; top: 0; z-index: 900;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.logo { color:#fff; font-size:1.15rem; font-weight:700; letter-spacing:1px; white-space:nowrap; }
+.logo span { color: var(--accent); }
+nav { display:flex; gap:28px; }
+nav a {
+  color:rgba(255,255,255,.85); font-size:.9rem; font-weight:500;
+  padding:4px 0; border-bottom:2px solid transparent;
+  transition: color var(--trans), border-color var(--trans);
+}
+nav a:hover { color:#fff; border-color: var(--accent); }
+
+/* 汉堡菜单（手机） */
+.menu-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+.menu-btn span { width:24px; height:2px; background:#fff; border-radius:2px; transition: var(--trans); }
+.nav-mobile { display:none; flex-direction:column; background:var(--blue); padding:12px 5%; gap:14px; }
+.nav-mobile a { color:#fff; font-size:.95rem; }
+.nav-mobile.open { display:flex; }
+
+/* ============================================================
+   Hero Banner
+============================================================ */
+.hero {
+  background: linear-gradient(135deg, #0f2748 0%, #1a3a6b 55%, #2255a0 100%);
+  color:#fff; text-align:center; padding:72px 5% 60px;
+}
+.hero h1 { font-size:clamp(1.5rem,4vw,2.6rem); letter-spacing:2px; margin-bottom:14px; }
+.hero p  { font-size:clamp(.9rem,2vw,1.1rem); color:rgba(255,255,255,.8); max-width:620px; margin:0 auto 32px; line-height:1.8; }
+.hero-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+.hero-tags span {
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+  color:#fff; padding:6px 18px; border-radius:20px; font-size:.85rem;
+}
+
+/* ============================================================
+   通用 Section
+============================================================ */
+section { padding: 60px 5%; }
+section:nth-child(odd) { background:#fff; }
+section:nth-child(even){ background: var(--gray); }
+.sec-title {
+  text-align:center; margin-bottom:40px;
+  font-size:clamp(1.2rem,3vw,1.7rem); color:var(--blue);
+  position:relative; padding-bottom:14px;
+}
+.sec-title::after {
+  content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:52px; height:3px; background:var(--accent); border-radius:2px;
+}
+
+/* ============================================================
+   产品网格
+============================================================ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+.product-card {
+  background:#fff; border-radius:var(--radius);
+  box-shadow: var(--shadow); overflow:hidden;
+  transition: transform var(--trans), box-shadow var(--trans);
+  cursor: pointer;
+}
+.product-card:hover { transform:translateY(-5px); box-shadow:0 10px 28px rgba(0,0,0,.18); }
+.product-card .thumb {
+  width:100%; aspect-ratio:4/3; overflow:hidden; background:#eee;
+}
+.product-card .thumb img {
+  width:100%; height:100%; object-fit:cover;
+  transition: transform .35s ease;
+}
+.product-card:hover .thumb img { transform:scale(1.06); }
+.product-card .card-body { padding:14px 16px 18px; }
+.product-card .card-title { font-size:.98rem; font-weight:700; color:var(--blue); margin-bottom:5px; }
+.product-card .card-sub   { font-size:.82rem; color:#666; }
+.product-card .detail-count {
+  margin-top:10px; font-size:.78rem; color:var(--accent); font-weight:600;
+}
+
+/* ============================================================
+   灯箱弹窗
+============================================================ */
+#lightbox {
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,.88); align-items:center; justify-content:center;
+  flex-direction:column;
+}
+#lightbox.active { display:flex; }
+#lb-wrap {
+  position:relative; max-width:min(90vw,820px); width:100%;
+  display:flex; flex-direction:column; align-items:center;
+}
+#lb-img-box {
+  width:100%; aspect-ratio:4/3; background:#111;
+  border-radius:var(--radius); overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+#lb-img { max-height:68vh; max-width:100%; object-fit:contain; border-radius:4px; }
+
+/* 左右箭头 */
+.lb-arrow {
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(255,255,255,.15); border:none; color:#fff;
+  font-size:1.8rem; width:44px; height:44px; border-radius:50%;
+  cursor:pointer; transition:background var(--trans); line-height:44px; text-align:center;
+  display:flex; align-items:center; justify-content:center;
+}
+.lb-arrow:hover { background:rgba(255,255,255,.32); }
+#lb-prev { left:-22px; }
+#lb-next { right:-22px; }
+
+/* 底部信息 */
+#lb-info {
+  margin-top:14px; color:rgba(255,255,255,.85);
+  font-size:.9rem; text-align:center; line-height:1.6;
+}
+#lb-counter { color:var(--accent); font-weight:700; }
+
+/* 缩略图条 */
+#lb-thumbs {
+  display:flex; gap:8px; margin-top:12px;
+  overflow-x:auto; max-width:min(90vw,820px);
+  padding-bottom:4px;
+}
+#lb-thumbs::-webkit-scrollbar { height:4px; }
+#lb-thumbs::-webkit-scrollbar-thumb { background:rgba(255,255,255,.3); border-radius:2px; }
+.lb-thumb {
+  flex-shrink:0; width:60px; height:45px; border-radius:4px;
+  overflow:hidden; cursor:pointer; border:2px solid transparent;
+  opacity:.6; transition: opacity var(--trans), border-color var(--trans);
+}
+.lb-thumb img { width:100%; height:100%; object-fit:cover; }
+.lb-thumb.active { border-color:var(--accent); opacity:1; }
+
+/* 关闭按钮 */
+#lb-close {
+  position:fixed; top:18px; right:22px;
+  background:none; border:none; color:#fff; font-size:2rem;
+  cursor:pointer; line-height:1; z-index:10000;
+  transition: color var(--trans);
+}
+#lb-close:hover { color:var(--accent); }
+
+/* ============================================================
+   公司介绍 & 优势
+============================================================ */
+.about-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;
+  max-width:900px; margin:0 auto;
+}
+.about-text p { line-height:1.9; color:#444; margin-bottom:12px; font-size:.95rem; }
+.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.stat-box {
+  background:#fff; border-radius:var(--radius); padding:20px;
+  text-align:center; box-shadow:var(--shadow);
+  border-top:3px solid var(--accent);
+}
+.stat-box .num { font-size:2rem; font-weight:700; color:var(--blue); }
+.stat-box .label { font-size:.82rem; color:#666; margin-top:4px; }
+
+.advantage-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; }
+.adv-card {
+  background:#fff; border-radius:var(--radius); padding:24px 20px;
+  box-shadow:var(--shadow); text-align:center;
+  border-bottom:3px solid transparent;
+  transition: border-color var(--trans), transform var(--trans);
+}
+.adv-card:hover { border-color:var(--accent); transform:translateY(-4px); }
+.adv-icon { font-size:2.2rem; margin-bottom:10px; }
+.adv-card h3 { font-size:.95rem; color:var(--blue); margin-bottom:6px; }
+.adv-card p  { font-size:.82rem; color:#666; line-height:1.7; }
+
+/* ============================================================
+   联系方式
+============================================================ */
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; max-width:800px; margin:0 auto; }
+.contact-card {
+  background:#fff; border-radius:var(--radius); padding:22px 18px;
+  text-align:center; box-shadow:var(--shadow);
+}
+.contact-card .icon { font-size:2rem; margin-bottom:8px; }
+.contact-card h3 { font-size:.85rem; color:#888; margin-bottom:6px; }
+.contact-card p  { font-size:1rem; font-weight:700; color:var(--blue); }
+
+/* ============================================================
+   页脚
+============================================================ */
+footer {
+  background:var(--blue); color:rgba(255,255,255,.7);
+  text-align:center; padding:22px 5%;
+  font-size:.82rem; line-height:1.8;
+}
+footer strong { color:#fff; }
+
+/* ============================================================
+   响应式
+============================================================ */
+@media (max-width:768px) {
+  nav { display:none; }
+  .menu-btn { display:flex; }
+  .about-grid { grid-template-columns:1fr; }
+  #lb-prev { left:-14px; }
+  #lb-next { right:-14px; }
+  .product-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:16px; }
+}
+</style>
 </head>
 <body>
 
-<!-- ===== 顶部导航 ===== -->
-<nav class="nav">
-  <div class="logo">&#x1F3ED; <span>鑫金顿</span>电气 · 专业杆件制造商</div>
-  <div class="nav-links" id="navLinks">
-    <a href="#products">产品分类</a>
-    <a href="#copy">官网文案</a>
-    <a href="#guide">建站教程</a>
-    <a href="#contact">联系方式</a>
-  </div>
-  <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+<!-- ══════════════════ 导航 ══════════════════ -->
+<header>
+  <div class="logo">鑫金顿<span>电气</span></div>
+  <nav>
+    <a href="#products">产品展示</a>
+    <a href="#about">公司介绍</a>
+    <a href="#advantage">核心优势</a>
+    <a href="#contact">联系我们</a>
+  </nav>
+  <div class="menu-btn" id="menuBtn" onclick="toggleNav()">
     <span></span><span></span><span></span>
   </div>
-</nav>
+</header>
+<div class="nav-mobile" id="navMobile">
+  <a href="#products" onclick="toggleNav()">产品展示</a>
+  <a href="#about"    onclick="toggleNav()">公司介绍</a>
+  <a href="#advantage"onclick="toggleNav()">核心优势</a>
+  <a href="#contact"  onclick="toggleNav()">联系我们</a>
+</div>
 
-<!-- ===== Hero Banner ===== -->
-<div class="hero">
-  <h1>专业杆件制造商 · <em>厂家直供全国</em></h1>
-  <p class="subtitle">监控立杆 &nbsp;|&nbsp; 对讲立柱 &nbsp;|&nbsp; 交通设施杆件 &nbsp;|&nbsp; 智慧综合杆</p>
-  <div class="tags">
-    <span class="htag">&#x1F3ED; 自建生产线</span>
-    <span class="htag">&#x2699;&#xFE0F; 支持定制</span>
-    <span class="htag">&#x1F6E1;&#xFE0F; 热镀锌工艺</span>
-    <span class="htag">&#x1F69A; 15天交货</span>
-    <span class="htag">&#x1F4DE; 13107895588</span>
+<!-- ══════════════════ Hero ══════════════════ -->
+<section class="hero">
+  <h1>福建鑫金顿电气有限公司</h1>
+  <p>专业生产各类市政杆件、监控立杆、对讲立柱、配电箱及变电站配套设施<br>工厂直营 · 品质保障 · 支持定制</p>
+  <div class="hero-tags">
+    <span>🏭 2500㎡ 自有工厂</span>
+    <span>✅ 热镀锌工艺</span>
+    <span>🚀 快速交货</span>
+    <span>📐 支持非标定制</span>
+    <span>🔩 配件齐全</span>
+  </div>
+</section>
+
+<!-- ══════════════════ 产品展示 ══════════════════ -->
+<section id="products">
+  <h2 class="sec-title">产品展示</h2>
+  <div class="product-grid">
+
+    <!-- 对讲立柱 -->
+    <div class="product-card" onclick="openLightbox('intercom')">
+      <div class="thumb">
+        <img src="images/intercom-main.png" alt="对讲立柱" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-title">对讲立柱</div>
+        <div class="card-sub">SHLZ 系列 · 不锈钢/碳钢可选</div>
+        <div class="detail-count">📷 点击查看 20 张细节图</div>
+      </div>
+    </div>
+
+    <!-- 监控立杆 -->
+    <div class="product-card" onclick="openLightbox('monitor')">
+      <div class="thumb">
+        <img src="images/monitor-main.jpg" alt="监控立杆" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-title">监控立杆（组合杆）</div>
+        <div class="card-sub">单悬臂 / 双悬臂 · 热镀锌处理</div>
+        <div class="detail-count">📷 点击查看 26 张细节图</div>
+      </div>
+    </div>
+
+    <!-- 八角杆（交通设施杆件） -->
+    <div class="product-card" onclick="openLightbox('octagonal')">
+      <div class="thumb">
+        <img src="images/octagonal-main.jpg" alt="八角杆" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-title">交通设施杆件（八角杆）</div>
+        <div class="card-sub">3.5 m – 6.5 m · 枪机/球机款</div>
+        <div class="detail-count">📷 点击查看 13 张细节图</div>
+      </div>
+    </div>
+
+    <!-- 监控箱/配电箱 -->
+    <div class="product-card" onclick="openLightbox('box')">
+      <div class="thumb">
+        <img src="images/box-main.png" alt="监控箱/配电箱" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-title">监控箱 / 配电箱</div>
+        <div class="card-sub">201 不锈钢 · 壁挂/抱箍款</div>
+        <div class="detail-count">📷 点击查看 21 张细节图</div>
+      </div>
+    </div>
+
+    <!-- 变电站配套钢架 -->
+    <div class="product-card" onclick="openLightbox('substation')">
+      <div class="thumb">
+        <img src="images/substation-main.jpg" alt="变电站配套钢架" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-title">变电站配套钢架</div>
+        <div class="card-sub">门型构架 · 大铁架 · 热镀锌</div>
+        <div class="detail-count">📷 点击查看 6 张细节图</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════ 公司介绍 ══════════════════ -->
+<section id="about">
+  <h2 class="sec-title">公司介绍</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>福建鑫金顿电气有限公司，坐落于福建省，拥有 <strong>2500 平方米</strong> 自有生产工厂，是专注市政配套电气设施生产的工厂型企业。</p>
+      <p>公司主营产品涵盖 <strong>对讲立柱、监控立杆、交通设施杆件、监控箱/配电箱、变电站配套钢架</strong> 五大系列，广泛应用于城市安防、智慧社区、变电站工程、道路交通等领域。</p>
+      <p>所有产品均采用热镀锌工艺，具备出色的防腐耐候性能，支持按图纸非标定制，可承接各类市政工程配套供货。</p>
+      <p>联系电话：<strong>15606035500</strong> &nbsp;|&nbsp; 微信：<strong>llx34532958</strong></p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box"><div class="num">2500<small>㎡</small></div><div class="label">自有工厂面积</div></div>
+      <div class="stat-box"><div class="num">5+</div><div class="label">核心产品系列</div></div>
+      <div class="stat-box"><div class="num">10+</div><div class="label">行业服务年限</div></div>
+      <div class="stat-box"><div class="num">100%</div><div class="label">热镀锌工艺覆盖</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 核心优势 ══════════════════ -->
+<section id="advantage">
+  <h2 class="sec-title">核心优势</h2>
+  <div class="advantage-grid">
+    <div class="adv-card">
+      <div class="adv-icon">🏭</div>
+      <h3>工厂直营</h3>
+      <p>无中间商，出厂价供货，同等品质价格更低。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">🔩</div>
+      <h3>热镀锌工艺</h3>
+      <p>全系列热镀锌处理，户外使用 10 年以上不生锈。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">📐</div>
+      <h3>非标定制</h3>
+      <p>按客户图纸/尺寸定制，满足各类工程特殊需求。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">🚚</div>
+      <h3>快速交货</h3>
+      <p>库存充足，常规规格当天发货，急单优先安排。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">📦</div>
+      <h3>配件齐全</h3>
+      <p>杆体、悬臂、抱箍、箱体一站式采购，省心省力。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-icon">🛡️</div>
+      <h3>质量保障</h3>
+      <p>严格出厂检验，问题产品无条件补换，售后无忧。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 联系我们 ══════════════════ -->
+<section id="contact">
+  <h2 class="sec-title">联系我们</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">📞</div>
+      <h3>联系电话</h3>
+      <p>15606035500</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">💬</div>
+      <h3>微信号</h3>
+      <p>llx34532958</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">📧</div>
+      <h3>业务邮箱</h3>
+      <p>34532958@qq.com</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">🏭</div>
+      <h3>工厂面积</h3>
+      <p>2500 平方米</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 页脚 ══════════════════ -->
+<footer>
+  <strong>福建鑫金顿电气有限公司</strong><br>
+  电话：15606035500 &nbsp;|&nbsp; 微信：llx34532958 &nbsp;|&nbsp; 邮箱：34532958@qq.com<br>
+  <span style="font-size:.75rem;color:rgba(255,255,255,.45);">© 2026 福建鑫金顿电气有限公司 版权所有</span>
+</footer>
+
+<!-- ══════════════════ 灯箱弹窗 ══════════════════ -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLightbox()">✕</button>
+  <div id="lb-wrap">
+    <button class="lb-arrow" id="lb-prev" onclick="lbStep(-1)">&#8249;</button>
+    <div id="lb-img-box">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <button class="lb-arrow" id="lb-next" onclick="lbStep(1)">&#8250;</button>
+    <div id="lb-info">
+      <span id="lb-title"></span> &nbsp;
+      <span id="lb-counter"></span>
+    </div>
+    <div id="lb-thumbs"></div>
   </div>
 </div>
 
-<!-- ===== 操作说明栏 ===== -->
-<div class="action-bar">
-  <p>&#x1F4CB; 本文档包含：产品参数表 · 官网文案 · 建站操作指南，可直接复制内容到网站后台使用。</p>
-  <button class="print-btn" onclick="window.print()">&#x1F5A8;&#xFE0F; 打印 / 导出PDF</button>
-</div>
+<!-- ══════════════════ JavaScript ══════════════════ -->
+<script>
+// ── 产品数据 ────────────────────────────────────────────────
+const PRODUCTS = {
+  intercom: {
+    name: "对讲立柱",
+    main: "images/intercom-main.png",
+    details: [
+      "images/intercom-detail-01.png","images/intercom-detail-02.png",
+      "images/intercom-detail-03.png","images/intercom-detail-04.png",
+      "images/intercom-detail-05.png","images/intercom-detail-06.png",
+      "images/intercom-detail-07.png","images/intercom-detail-08.png",
+      "images/intercom-detail-09.png","images/intercom-detail-10.png",
+      "images/intercom-detail-11.png","images/intercom-detail-12.png",
+      "images/intercom-detail-13.png","images/intercom-detail-14.png",
+      "images/intercom-detail-15.png","images/intercom-detail-16.png",
+      "images/intercom-detail-17.png","images/intercom-detail-18.png",
+      "images/intercom-detail-19.png","images/intercom-detail-20.png"
+    ]
+  },
+  monitor: {
+    name: "监控立杆（组合杆）",
+    main: "images/monitor-main.jpg",
+    details: [
+      "images/monitor-detail-01.png","images/monitor-detail-02.png",
+      "images/monitor-detail-03.png","images/monitor-detail-04.png",
+      "images/monitor-detail-05.png","images/monitor-detail-06.png",
+      "images/monitor-detail-07.png","images/monitor-detail-08.png",
+      "images/monitor-detail-09.png","images/monitor-detail-10.png",
+      "images/monitor-detail-11.png","images/monitor-detail-12.png",
+      "images/monitor-detail-13.png","images/monitor-detail-14.png",
+      "images/monitor-detail-15.png","images/monitor-detail-16.png",
+      "images/monitor-detail-17.png","images/monitor-detail-18.png",
+      "images/monitor-detail-19.png","images/monitor-detail-20.png",
+      "images/monitor-detail-21.png","images/monitor-detail-22.png",
+      "images/monitor-detail-23.png","images/monitor-detail-24.png",
+      "images/monitor-detail-25.png","images/monitor-detail-26.png"
+    ]
+  },
+  octagonal: {
+    name: "交通设施杆件（八角杆）",
+    main: "images/octagonal-main.jpg",
+    details: [
+      "images/octagonal-detail-01.png","images/octagonal-detail-02.png",
+      "images/octagonal-detail-03.png","images/octagonal-detail-04.png",
+      "images/octagonal-detail-05.png","images/octagonal-detail-06.png",
+      "images/octagonal-detail-07.png","images/octagonal-detail-08.png",
+      "images/octagonal-detail-09.png","images/octagonal-detail-10.png",
+      "images/octagonal-detail-11.png","images/octagonal-detail-12.png",
+      "images/octagonal-detail-13.png"
+    ]
+  },
+  box: {
+    name: "监控箱 / 配电箱",
+    main: "images/box-main.png",
+    details: [
+      "images/box-detail-01.png","images/box-detail-02.png",
+      "images/box-detail-03.png","images/box-detail-04.png",
+      "images/box-detail-05.png","images/box-detail-06.png",
+      "images/box-detail-07.png","images/box-detail-08.png",
+      "images/box-detail-09.png","images/box-detail-10.png",
+      "images/box-detail-11.png","images/box-detail-12.png",
+      "images/box-detail-13.png","images/box-detail-14.png",
+      "images/box-detail-15.png","images/box-detail-16.png",
+      "images/box-detail-17.png","images/box-detail-18.png",
+      "images/box-detail-19.png","images/box-detail-20.png",
+      "images/box-detail-21.png"
+    ]
+  },
+  substation: {
+    name: "变电站配套钢架",
+    main: "images/substation-main.jpg",
+    details: [
+      "images/substation-detail-01.png","images/substation-detail-02.png",
+      "images/substation-detail-03.png","images/substation-detail-04.png",
+      "images/substation-detail-05.png","images/substation-detail-06.png"
+    ]
+  }
+};
 
-<!-- ===== 侧边导航 ===== -->
-<div class="sidebar">
-  <a href="#products">产品分类</a>
-  <a href="#copy">官网文案</a>
-  <a href="#guide">建站教程</a>
-  <a href="#contact">联系方式</a>
-</div>
+// ── 灯箱状态 ───────────────────────────────────────────────
+let curProduct = null;
+let curIndex   = 0;   // 0 = 主图，1+ = 细节图（index-1）
 
+function openLightbox(key) {
+  curProduct = key;
+  curIndex   = 0;
+  renderLightbox();
+  document.getElementById("lightbox").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("active");
+  document.body.style.overflow = "";
+}
+function lbStep(dir) {
+  const p = PRODUCTS[curProduct];
+  const total = 1 + p.details.length;
+  curIndex = (curIndex + dir + total) % total;
+  renderLightbox();
+}
+function goThumb(i) {
+  curIndex = i;
+  renderLightbox();
+}
 
-<!-- ===================== 产品实物图展示区 ===================== -->
-<div class="section" id="gallery">
-  <div class="section-title">&#x1F4F7; 产品实物展示</div>
-  <div class="section-sub">工厂自产 · 热镀锌工艺 · 支持定制</div>
+function renderLightbox() {
+  const p = PRODUCTS[curProduct];
+  const allImgs = [p.main, ...p.details];
+  const total   = allImgs.length;
 
-  <!-- 对讲立柱 -->
-  <h3 class="gallery-cat">&#x1F4DE; 对讲立柱系列（SHLZ 系列）</h3>
-  <div class="gallery-grid">
-    <div class="gallery-card"><img src="product-intercom-a01.png" alt="对讲立柱 SHLZ-A01" loading="lazy"><span>SHLZ-A01</span></div>
-    <div class="gallery-card"><img src="product-intercom-a04.png" alt="对讲立柱 SHLZ-A04" loading="lazy"><span>SHLZ-A04</span></div>
-    <div class="gallery-card"><img src="product-intercom-a06.png" alt="对讲立柱 SHLZ-A06" loading="lazy"><span>SHLZ-A06</span></div>
-    <div class="gallery-card"><img src="product-intercom-a10.png" alt="对讲立柱 SHLZ-A10" loading="lazy"><span>SHLZ-A10</span></div>
-     </div>
+  document.getElementById("lb-img").src  = allImgs[curIndex];
+  document.getElementById("lb-img").alt  = p.name;
+  document.getElementById("lb-title").textContent   = p.name;
+  document.getElementById("lb-counter").textContent = (curIndex+1) + " / " + total;
 
-  <!-- 八角杆 -->
-  <h3 class="gallery-cat">&#x1F4A1; 八角杆系列（枪机 / 球机）</h3>
-  <div class="gallery-grid">
-    <div class="gallery-card"><img src="product-octagonal-3-5m-ball.png" alt="八角杆3.5米球机" loading="lazy"><span>3.5米 球机</span></div>
-    <div class="gallery-card"><img src="product-octagonal-4m-gun.png" alt="八角杆4米枪机" loading="lazy"><span>4米 枪机</span></div>
-    <div class="gallery-card"><img src="product-octagonal-4-5m-ball.png" alt="八角杆4.5米球机" loading="lazy"><span>4.5米 球机</span></div>
-    <div class="gallery-card"><img src="product-octagonal-5m-gun.png" alt="八角杆5米枪机" loading="lazy"><span>5米 枪机</span></div>
-    <div class="gallery-card"><img src="product-octagonal-6m-ball.png" alt="八角杆6米球机" loading="lazy"><span>6米 球机</span></div>
-    <div class="gallery-card"><img src="product-octagonal-6-5m-gun.png" alt="八角杆6.5米枪机" loading="lazy"><span>6.5米 枪机</span></div>
-   
-  </div>
-</div>
+  // 缩略图
+  const box = document.getElementById("lb-thumbs");
+  box.innerHTML = "";
+  allImgs.forEach((src, i) => {
+    const d   = document.createElement("div");
+    d.className = "lb-thumb" + (i === curIndex ? " active" : "");
+    d.onclick   = () => goThumb(i);
+    const img   = document.createElement("img");
+    img.src     = src; img.loading = "lazy";
+    d.appendChild(img);
+    box.appendChild(d);
+  });
+  // 滚动当前缩略图到可视区
+  const active = box.querySelector(".lb-thumb.active");
+  if (active) active.scrollIntoView({ block:"nearest", inline:"center", behavior:"smooth" });
+}
 
-<!-- ===================== 第一部分：产品分类与参数表 ===================== -->
-<div class="section" id="products">
-  <div class="section-title">第一部分：全店产品分类与参数总表</div>
-  <div class="section-sub">共整理 5 大类 · 20+ 款主力产品 · 参数可直接粘贴到网站后台</div>
+// 键盘导航
+document.addEventListener("keydown", e => {
+  if (!document.getElementById("lightbox").classList.contains("active")) return;
+  if (e.key === "ArrowLeft")  lbStep(-1);
+  if (e.key === "ArrowRight") lbStep(1);
+  if (e.key === "Escape")     closeLightbox();
+});
 
-  <div class="table-scroll">
-  <table class="product-table">
-    <thead>
-      <tr>
-        <th style="width:140px">产品名称</th>
-        <th style="width:90px">型号/规格</th>
-        <th>核心参数</th>
-        <th>适用场景</th>
-        <th>产品简介（可直接复制）</th>
-      </tr>
-    </thead>
-    <tbody>
+// 点击遮罩关闭
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target === this) closeLightbox();
+});
 
-      <!-- 分类一：监控立杆 -->
-      <tr class="cat-row"><td colspan="5">&#x1F4F9; 一、监控立杆系列</td></tr>
-      <tr>
-        <td>单臂监控立杆</td>
-        <td>3米 / 4米 / 5米 / 6米</td>
-        <td>
-          管径：76mm/89mm/114mm<br>
-          壁厚：3.0mm/4.0mm<br>
-          材质：Q235热镀锌钢<br>
-          横臂：0.5m / 1.0m / 1.5m可选<br>
-          地笼：配套预埋地笼
-        </td>
-        <td>小区门口、停车场、道路路口、工厂园区</td>
-        <td>【产品简介】本款单臂监控立杆采用Q235优质钢材，热镀锌防腐处理，杆体壁厚3.0mm以上，表面光洁无毛刺。横臂可根据需求定制0.5m~1.5m，搭配枪机/球机均适用。使用寿命10年以上，适合小区、停车场、工厂园区等户外监控安装。</td>
-      </tr>
-      <tr>
-        <td>双臂监控立杆</td>
-        <td>4米 / 5米 / 6米</td>
-        <td>
-          管径：114mm/133mm<br>
-          壁厚：4.0mm<br>
-          材质：Q235热镀锌钢<br>
-          双横臂：各0.5m~1.5m可选<br>
-          承重：≥30kg
-        </td>
-        <td>主干道路、十字路口、大型停车场</td>
-        <td>【产品简介】双臂款可同时搭载2台摄像头，最大覆盖范围更广，适合十字路口或大型广场多角度监控需求。杆体承重≥30kg，搭配防雷接地措施，稳固耐用。</td>
-      </tr>
-      <tr>
-        <td>悬臂监控杆（L型杆）</td>
-        <td>5米 / 6米 / 7米</td>
-        <td>
-          杆体：圆管114mm~140mm<br>
-          悬臂：2m~4m<br>
-          仰角：0°~15°可调<br>
-          材质：Q235热镀锌<br>
-          配套：手孔盒、引线管
-        </td>
-        <td>公路、高速路口、隧道口</td>
-        <td>【产品简介】L型悬臂杆专为道路中心监控设计，悬臂长度可定制2~4m，内置穿线管，安装布线一体化。杆体经热镀锌处理，适应南方高湿、高盐雾环境，使用寿命15年以上。</td>
-      </tr>
-
-      <!-- 分类二：对讲立柱 -->
-      <tr class="cat-row"><td colspan="5">&#x1F514; 二、对讲立柱系列</td></tr>
-      <tr>
-        <td>不锈钢对讲立柱</td>
-        <td>标准款 / 加高款</td>
-        <td>
-          材质：304不锈钢<br>
-          高度：1100mm / 1200mm<br>
-          截面：100×100mm<br>
-          表面：拉丝+磨砂处理<br>
-          适配：海康、大华、立林、安居宝
-        </td>
-        <td>小区门口机、楼栋单元门、别墅围墙</td>
-        <td>【产品简介】本款立柱采用304不锈钢整体成型，高度1100~1200mm，拉丝磨砂表面处理，美观耐腐蚀。内部空间充裕，可容纳走线穿管。兼容市面主流品牌门口主机（海康/大华/立林/安居宝等），安装简便。</td>
-      </tr>
-      <tr>
-        <td>碳钢烤漆对讲立柱</td>
-        <td>单联 / 双联 / 三联</td>
-        <td>
-          材质：Q235钢板<br>
-          厚度：1.5mm<br>
-          表面：磷化+静电喷涂<br>
-          颜色：银灰色/香槟金/纯白可选<br>
-          承重面板：可承载2~3台主机
-        </td>
-        <td>小区、写字楼、商业综合体、公寓</td>
-        <td>【产品简介】碳钢烤漆款立柱价格实惠，颜色多样，可根据项目风格定制颜色。双联/三联款可安装多台对讲主机，适合多单元集中门禁系统使用。出厂前100%通过防腐检验，适合室外长期使用。</td>
-      </tr>
-      <tr>
-        <td>铝合金对讲立柱</td>
-        <td>标准款</td>
-        <td>
-          材质：6063-T5铝合金型材<br>
-          壁厚：2.5mm<br>
-          表面：阳极氧化处理<br>
-          高度：1100mm<br>
-          接线口：底部防水接线区
-        </td>
-        <td>高端住宅、别墅、商务楼宇</td>
-        <td>【产品简介】铝合金立柱采用6063-T5型材，轻量化设计，表面经阳极氧化处理，防紫外线、不褪色。底部设有专用防水接线区域，安装防水性能优越，适合高档小区或别墅使用。</td>
-      </tr>
-
-      <!-- 分类三：交通设施杆件 -->
-      <tr class="cat-row"><td colspan="5">&#x1F6A6; 三、交通设施杆件系列</td></tr>
-      <tr>
-        <td>交通信号灯杆</td>
-        <td>单悬臂 / 双悬臂 / 八角杆</td>
-        <td>
-          管径：168mm~273mm<br>
-          壁厚：5.0mm~8.0mm<br>
-          高度：6m / 8m / 10m<br>
-          材质：Q345B热镀锌<br>
-          配套：走线槽、手孔门
-        </td>
-        <td>城市路口信号灯安装、国道省道</td>
-        <td>【产品简介】信号灯杆采用Q345B高强度钢，壁厚5mm以上，热镀锌防腐，符合GB/T标准。悬臂可定制2m~6m，内置多路穿线管，适配各品牌信号灯控制器。适用于城市路口、国道、快速路。</td>
-      </tr>
-      <tr>
-        <td>道路标志牌杆</td>
-        <td>F型杆 / T型杆 / 悬臂式</td>
-        <td>
-          管径：114mm~168mm<br>
-          壁厚：4.0mm<br>
-          高度：4m / 5m / 6m<br>
-          材质：Q235热镀锌<br>
-          板面：铝板反光标志牌
-        </td>
-        <td>道路指示牌、限速标志、禁止标志</td>
-        <td>【产品简介】标志牌杆符合《道路交通标志和标线》国家标准，采用热镀锌钢管，稳固耐用。可按设计图纸定制F型、T型或悬臂式，搭配铝板反光标志牌，满足各类道路安全标识需求。</td>
-      </tr>
-      <tr>
-        <td>龙门架（门架）</td>
-        <td>跨度4m~20m定制</td>
-        <td>
-          主梁：无缝钢管/箱型梁<br>
-          立柱：Q345B<br>
-          跨度：4m~20m<br>
-          高度：4m~8m<br>
-          表面：热镀锌+氟碳漆
-        </td>
-        <td>高速公路门架、隧道标识、限高龙门</td>
-        <td>【产品简介】龙门架结构由厂家工程师按实际跨度进行力学计算，确保强度符合道路设计规范。主梁采用箱型截面，抗扭刚度强，适用于高速公路ETC门架、限高提示门架等场景。</td>
-      </tr>
-
-      <!-- 分类四：智慧城市综合杆 -->
-      <tr class="cat-row"><td colspan="5">&#x1F306; 四、智慧综合杆系列</td></tr>
-      <tr>
-        <td>多功能智慧综合杆</td>
-        <td>标准款 / 豪华款</td>
-        <td>
-          高度：8m~12m<br>
-          功能模块：监控摄像头+照明+广播+充电桩接口<br>
-          通信：预留5G基站挂载接口<br>
-          材质：Q345B热镀锌<br>
-          防护等级：IP65
-        </td>
-        <td>智慧园区、智慧社区、智慧城市道路</td>
-        <td>【产品简介】智慧综合杆集多种城市功能于一体，一杆承载监控、路灯、广播、充电桩等多项设施，有效减少道路杆件数量，美化城市景观。预留5G基站挂载接口，满足智慧城市基础设施升级需求。</td>
-      </tr>
-
-      <!-- 分类五：五金配件 -->
-      <tr class="cat-row"><td colspan="5">&#x1F529; 五、五金配件系列</td></tr>
-      <tr>
-        <td>立杆预埋地笼</td>
-        <td>通用款 / 加强款</td>
-        <td>
-          规格：300×300×800mm（标准）<br>
-          螺栓：M20×600热镀锌地脚螺栓×4<br>
-          材质：Q235热轧钢筋笼<br>
-          混凝土厚度要求：≥500mm
-        </td>
-        <td>各类立杆基础预埋</td>
-        <td>【产品简介】预埋地笼配套立杆使用，Q235钢筋焊接成型，热镀锌处理防腐。4条地脚螺栓精确定位，安装时对准模板浇筑即可，操作简便，确保立杆基础牢固。</td>
-      </tr>
-      <tr>
-        <td>横臂摄像机支架</td>
-        <td>单孔 / 双孔 / 三孔横臂</td>
-        <td>
-          长度：0.5m / 1.0m / 1.5m / 2.0m<br>
-          管径：60mm<br>
-          壁厚：2.5mm<br>
-          材质：热镀锌钢<br>
-          仰角：0°~15°可调
-        </td>
-        <td>立杆顶部摄像机安装</td>
-        <td>【产品简介】横臂支架与立杆配套使用，尺寸多样，适配主流枪机和球机安装。仰角可在0°~15°范围内调节，帮助安装人员快速对准监控角度，安装孔位标准化，开箱即装。</td>
-      </tr>
-      <tr>
-        <td>抱箍/抱杆支架</td>
-        <td>适配管径76~168mm</td>
-        <td>
-          材质：304不锈钢 / Q235热镀锌<br>
-          适配杆径：76mm~168mm<br>
-          螺栓：M10不锈钢<br>
-          承重：≥20kg
-        </td>
-        <td>电线杆、灯杆补充安装摄像头</td>
-        <td>【产品简介】抱杆支架可将摄像机固定在现有电线杆或灯杆上，免打孔，安装快捷。提供不锈钢和镀锌两种材质，适配76mm~168mm杆径，满足各类户外补装需求。</td>
-      </tr>
-      <tr>
-        <td>防水手孔盒</td>
-        <td>小号 / 中号 / 大号</td>
-        <td>
-          尺寸：100×70mm / 150×100mm / 200×130mm<br>
-          材质：Q235热镀锌板，厚2.0mm<br>
-          防护等级：IP54<br>
-          锁具：配套防盗合页锁
-        </td>
-        <td>立杆杆体检修接线</td>
-        <td>【产品简介】手孔盒焊接于杆体指定位置，提供杆内布线检修入口。热镀锌处理抗腐蚀，配套防盗锁具，防止线缆被破坏。出厂前经水密性检测，防护等级IP54以上。</td>
-      </tr>
-
-    </tbody>
-  </table>
-  </div><!-- /table-scroll -->
-
-  <p style="font-size:13px;color:#888;margin-top:10px;">&#x1F4A1; 如需补充具体产品型号，请把淘宝店内产品截图发给我，我可以帮你精确匹配参数。</p>
-</div>
-
-
-<!-- ===================== 第二部分：官网全套文案 ===================== -->
-<div class="section" id="copy">
-  <div class="section-title">第二部分：官网全套文案（可直接复制到后台）</div>
-  <div class="section-sub">以下所有文案均可直接粘贴到网站各页面的文本编辑区</div>
-
-  <!-- 2.1 首页 Banner 标语 -->
-  <div class="copy-card">
-    <h3>① 首页 Banner 主标语（大图区域）</h3>
-    <span class="copy-label" onclick="copyText(this)">复制</span>
-    <div class="text-block">主标题：专业杆件制造商 · 直供全国
-副标题：监控立杆 | 对讲立柱 | 交通设施杆件 | 综合智慧杆
-亮点语：厂家直销 · 支持定制 · 15天交货 · 全国发货</div>
-  </div>
-
-  <!-- 2.2 公司简介 -->
-  <div class="copy-card">
-    <h3>② 公司简介（关于我们页面）</h3>
-    <span class="copy-label" onclick="copyText(this)">复制</span>
-    <div class="text-block">福建鑫金顿电气有限公司（Fujian XinJinDun Electric Co., Ltd.）成立于2022年，坐落于福建省泉州台商投资区洛阳镇洛阳大道。公司注册资本1000万元，是一家专业从事安防杆件、交通设施杆件及电气配套产品研发、生产、销售的综合型制造企业。
-
-公司主要产品涵盖：监控立杆、对讲立柱、交通信号灯杆、道路标志牌杆、智慧综合杆及各类五金配件。产品广泛应用于智慧城市、交通管理、安防监控、小区楼宇等领域，深受全国各地客户信赖。
-
-工厂拥有先进的数控切割、自动焊接、热镀锌处理及静电喷涂生产线，具备年产万吨杆件的生产能力。公司秉持"精工制造、诚信经营"的经营理念，坚持为每一位客户提供高品质、高性价比的产品与服务。
-
-我们竭诚欢迎各地经销商、工程公司、政府采购单位与我们携手合作，共建智慧、安全的城市基础设施。</div>
-  </div>
-
-  <!-- 2.3 工厂实力 -->
-  <div class="copy-card">
-    <h3>③ 工厂实力介绍（工厂/实力页面）</h3>
-    <span class="copy-label" onclick="copyText(this)">复制</span>
-    <div class="text-block">【生产能力】
-• 工厂占地面积：2500平方米
-• 主要生产线：数控等离子切割线 · 自动氩弧焊接线 · 热镀锌处理线 · 静电喷涂线
-• 年产能：万吨级杆件产能，支持批量订单快速排产
-
-【品质控制】
-• 原材料100%采用国标Q235/Q345B钢材，每批次附材质证明书
-• 生产过程严格执行《钢制结构件热镀锌》等国家行业标准
-• 出厂前经100%外观检验、尺寸检验和防腐附着力检测
-
-【交货能力】
-• 标准现货产品：3~5个工作日发货
-• 定制产品：确认图纸后10~15个工作日完成生产
-• 支持整车配送、零担运输，可上门提货
-
-【服务保障】
-• 售前：免费提供选型建议和安装图纸
-• 售中：实时同步生产进度，驻厂监工可接待
-• 售后：产品质保2年，自然损坏包退包换</div>
-  </div>
-
-  <!-- 2.4 产品优势 -->
-  <div class="copy-card">
-    <h3>④ 核心优势（首页优势模块 / 产品页引导语）</h3>
-    <span class="copy-label" onclick="copyText(this)">复制</span>
-    <div class="text-block">✅ 优势一：正宗厂家直供，无中间商差价
-鑫金顿自建生产线，从切割、焊接到热镀锌全部自主完成。您直接与工厂对话，省去层层经销商加价，同等质量价格更低。
-
-✅ 优势二：全系热镀锌，户外用10年以上
-我们所有金属杆件出厂前均经过热镀锌防腐处理，镀层厚度符合国标≥85μm要求，在沿海、高温高湿环境下使用寿命可达10~15年，远超一般喷漆产品。
-
-✅ 优势三：尺寸规格全定制，不卖库存货
-高度、管径、横臂长度、颜色、开孔位置——全部支持按图纸或实地测量定制，确保产品到场即可安装，无需二次修改。
-
-✅ 优势四：兼容主流品牌设备，安装即插即用
-对讲立柱兼容海康威视、大华、立林、安居宝等主流品牌主机；监控立杆预留多种安装孔位，适配球机、枪机、一体机等各类设备。
-
-✅ 优势五：一站式服务，从下单到安装全程支持
-提供免费CAD安装图纸、施工技术支持。对于工程项目，可安排驻场工程师对接，确保项目顺利推进。</div>
-  </div>
-
-  <!-- 2.5 产品分类文案 -->
-  <div class="copy-card">
-    <h3>⑤ 各分类导航描述文案（分类页顶部引导语）</h3>
-    <span class="copy-label" onclick="copyText(this)">复制</span>
-    <div class="text-block">【监控立杆系列】
-专为安防工程设计，高度覆盖3米至8米，材质Q235热镀锌，杆体壁厚3mm~5mm可选。支持单臂、双臂、L型悬臂等多种形态定制，适配各品牌球机、枪机、一体机。
-
-【对讲立柱系列】
-304不锈钢/碳钢烤漆/铝合金三大材质，兼容海康、大华、立林等主流对讲系统。支持单联到三联开孔定制，广泛应用于住宅小区、商业楼宇、别墅院墙。
-
-【交通设施杆件系列】
-覆盖信号灯杆、标志牌杆、龙门架等全类型道路设施杆件。符合GB/T国家标准，热镀锌防腐，承重、强度满足道路工程验收要求。
-
-【智慧综合杆系列】
-一杆多用，集成监控、照明、广播、充电桩于一体，预留5G基站接口。助力城市数字化基础设施升级，减少道路视觉污染。
-
-【五金配件系列】
-预埋地笼、横臂支架、抱箍、手孔盒一应俱全，均与主力杆件配套出厂，标准化接口，安装零误差。</div>
-  </div>
-
-  <!-- 2.6 联系方式文案 -->
-  <div class="copy-card" id="contact">
-    <h3>⑥ 联系方式页面文案</h3>
-    <span class="copy-label" onclick="copyText(this)">复制</span>
-    <div class="text-block">公司名称：福建鑫金顿电气有限公司
-公司地址：福建省泉州台商投资区洛阳镇洛阳大道565号4幢
-淘宝企业店：shop437460618.taobao.com
-旺旺/在线咨询：lichenen4
-
-业务咨询热线：13107895588
-工程报价邮箱：46465910@qq.com
-微信/企业微信：cmx13107895588
-
-工作时间：周一至周六 08:30 - 18:00
-发货地点：福建省泉州市（可发全国，支持整车/零担）
-
----
-如需获取报价，请提供以下信息：
-① 产品类型（如：监控立杆/对讲立柱）
-② 所需高度/尺寸规格
-③ 采购数量
-④ 使用地点（省份）
-我们将在1小时内回复报价。</div>
-  </div>
-
-</div>
-
-
+// 手机端汉堡菜单
+function toggleNav() {
+  document.getElementById("navMobile").classList.toggle("open");
+}
+</script>
 </body>
 </html>
