@@ -3,604 +3,425 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>福建鑫金顿电气有限公司 – 官方网站</title>
-<meta name="description" content="福建鑫金顿电气有限公司，专业生产对讲立柱、监控立杆、交通设施杆件、监控箱/配电箱、变电站配套钢架，工厂直营，质量可靠。">
+<title>福建鑫金顿电气有限公司 - 专业监控立杆/对讲立柱/变电站钢架制造商</title>
+<meta name="description" content="福建鑫金顿电气有限公司，专业生产监控立杆、对讲立柱、交通设施杆件、监控箱配电箱、变电站配套钢架，2500㎡工厂，品质保障。电话：15606035500">
 <style>
-/* ============================================================
-   全局 Reset & 变量
-============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --blue:   #1a3a6b;
-  --accent: #e8a020;
-  --gray:   #f5f5f5;
-  --text:   #222;
-  --light:  #fff;
-  --radius: 6px;
-  --shadow: 0 4px 18px rgba(0,0,0,.13);
-  --trans:  .22s ease;
-}
+/* ===== 基础重置 ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif; color: var(--text); background:#fff; }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+body { font-family: -apple-system, "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif; color: #333; line-height: 1.6; background: #f5f7fa; }
 
-/* ============================================================
-   导航栏
-============================================================ */
-header {
-  position: sticky; top: 0; z-index: 900;
-  background: var(--blue);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; height: 60px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.25);
-}
-.logo { color:#fff; font-size:1.15rem; font-weight:700; letter-spacing:1px; white-space:nowrap; }
-.logo span { color: var(--accent); }
-nav { display:flex; gap:28px; }
-nav a {
-  color:rgba(255,255,255,.85); font-size:.9rem; font-weight:500;
-  padding:4px 0; border-bottom:2px solid transparent;
-  transition: color var(--trans), border-color var(--trans);
-}
-nav a:hover { color:#fff; border-color: var(--accent); }
+/* ===== 导航栏 ===== */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0d2a4a; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; box-shadow: 0 2px 12px rgba(0,0,0,.3); }
+.nav-logo { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: 1px; text-decoration: none; }
+.nav-logo span { color: #3498db; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 15px; transition: .25s; position: relative; }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links a::after { content:''; position:absolute; bottom:-4px;left:0;width:0;height:2px;background:#3498db;transition:.25s; }
+.nav-links a:hover::after { width:100%; }
 
-/* 汉堡菜单（手机） */
-.menu-btn { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
-.menu-btn span { width:24px; height:2px; background:#fff; border-radius:2px; transition: var(--trans); }
-.nav-mobile { display:none; flex-direction:column; background:var(--blue); padding:12px 5%; gap:14px; }
-.nav-mobile a { color:#fff; font-size:.95rem; }
-.nav-mobile.open { display:flex; }
+/* 汉堡按钮(手机) */
+.hamburger { display:none; cursor:pointer; flex-direction:column; gap:5px; background:none;border:none;padding:4px }
+.hamburger span { display:block;width:24px;height:2px;background:#fff;transition:.3s }
 
-/* ============================================================
-   Hero Banner
-============================================================ */
-.hero {
-  background: linear-gradient(135deg, #0f2748 0%, #1a3a6b 55%, #2255a0 100%);
-  color:#fff; text-align:center; padding:72px 5% 60px;
-}
-.hero h1 { font-size:clamp(1.5rem,4vw,2.6rem); letter-spacing:2px; margin-bottom:14px; }
-.hero p  { font-size:clamp(.9rem,2vw,1.1rem); color:rgba(255,255,255,.8); max-width:620px; margin:0 auto 32px; line-height:1.8; }
-.hero-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
-.hero-tags span {
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
-  color:#fff; padding:6px 18px; border-radius:20px; font-size:.85rem;
-}
+/* ===== Banner区 ===== */
+.hero { height: 420px; background: linear-gradient(135deg, #0d2a4a 0%, #1a4a7a 50%, #0d3a5c 100%); display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 20px; margin-top:64px; position:relative; overflow:hidden; }
+.hero::before { content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="g" patternUnits="userSpaceOnUse" width="30" height="30"><circle cx="15" cy="15" r="1.5" fill="rgba(52,152,219,.12)"/></pattern></defs><rect fill="url(%23g)" width="100" height="100"/></svg>'); opacity:.5; }
+.hero-content { position:relative;z-index:1;max-width:700px; }
+.hero h1 { font-size: 42px; font-weight: 800; letter-spacing: 3px; margin-bottom: 16px; }
+.hero h1 b { color: #3498db; }
+.hero p { font-size: 18px; opacity: .88; margin-bottom: 28px; }
+.hero-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.btn-primary { display:inline-block;padding:14px 36px;background:#3498db;color:#fff;text-decoration:none;font-size:16px;font-weight:600;border-radius:4px;transition:.25s; }
+.btn-primary:hover { background:#2980b9; transform:translateY(-2px);box-shadow:0 6px 18px rgba(52,152,219,.38); }
+.btn-outline { display:inline-block;padding:13px 35px;border:2px solid rgba(255,255,255,.45);color:#fff;text-decoration:none;font-size:16px;font-weight:600;border-radius:4px;transition:.25s; }
+.btn-outline:hover { border-color:#fff;background:rgba(255,255,255,.08); }
 
-/* ============================================================
-   通用 Section
-============================================================ */
-section { padding: 60px 5%; }
-section:nth-child(odd) { background:#fff; }
-section:nth-child(even){ background: var(--gray); }
-.sec-title {
-  text-align:center; margin-bottom:40px;
-  font-size:clamp(1.2rem,3vw,1.7rem); color:var(--blue);
-  position:relative; padding-bottom:14px;
-}
-.sec-title::after {
-  content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
-  width:52px; height:3px; background:var(--accent); border-radius:2px;
-}
+/* ===== 通用容器 ===== */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
-/* ============================================================
-   产品网格
-============================================================ */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
-}
-.product-card {
-  background:#fff; border-radius:var(--radius);
-  box-shadow: var(--shadow); overflow:hidden;
-  transition: transform var(--trans), box-shadow var(--trans);
-  cursor: pointer;
-}
-.product-card:hover { transform:translateY(-5px); box-shadow:0 10px 28px rgba(0,0,0,.18); }
-.product-card .thumb {
-  width:100%; aspect-ratio:4/3; overflow:hidden; background:#eee;
-}
-.product-card .thumb img {
-  width:100%; height:100%; object-fit:cover;
-  transition: transform .35s ease;
-}
-.product-card:hover .thumb img { transform:scale(1.06); }
-.product-card .card-body { padding:14px 16px 18px; }
-.product-card .card-title { font-size:.98rem; font-weight:700; color:var(--blue); margin-bottom:5px; }
-.product-card .card-sub   { font-size:.82rem; color:#666; }
-.product-card .detail-count {
-  margin-top:10px; font-size:.78rem; color:var(--accent); font-weight:600;
-}
+/* ===== Section标题 ===== */
+.section-title { text-align:center; padding:60px 0 10px; }
+.section-title h2 { font-size: 32px; color: #0d2a4a; font-weight: 700; position:relative;display:inline-block; }
+.section-title h2::after { content:'';display:block;width:56px;height:3.5px;background:#3498db;margin:10px auto 0;border-radius:2px; }
+.section-title p { color: #666; margin-top: 10px; font-size: 16px; }
 
-/* ============================================================
-   灯箱弹窗
-============================================================ */
-#lightbox {
-  display:none; position:fixed; inset:0; z-index:9999;
-  background:rgba(0,0,0,.88); align-items:center; justify-content:center;
-  flex-direction:column;
-}
-#lightbox.active { display:flex; }
-#lb-wrap {
-  position:relative; max-width:min(90vw,820px); width:100%;
-  display:flex; flex-direction:column; align-items:center;
-}
-#lb-img-box {
-  width:100%; aspect-ratio:4/3; background:#111;
-  border-radius:var(--radius); overflow:hidden;
-  display:flex; align-items:center; justify-content:center;
-}
-#lb-img { max-height:68vh; max-width:100%; object-fit:contain; border-radius:4px; }
+/* ===== 产品展示 ===== */
+.products { padding-bottom: 70px; }
+.prod-section { margin-bottom: 54px; }
+.prod-header { display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-left:4px; }
+.prod-header .icon-bar { width:4px;height:30px;background:#3498db;border-radius:2px; }
+.prod-header h3 { font-size:24px;color:#0d2a4a;font-weight:700; }
+.prod-header p.desc { color:#555;font-size:15px;margin-left:auto;opacity:.75; }
 
-/* 左右箭头 */
-.lb-arrow {
-  position:absolute; top:50%; transform:translateY(-50%);
-  background:rgba(255,255,255,.15); border:none; color:#fff;
-  font-size:1.8rem; width:44px; height:44px; border-radius:50%;
-  cursor:pointer; transition:background var(--trans); line-height:44px; text-align:center;
-  display:flex; align-items:center; justify-content:center;
-}
-.lb-arrow:hover { background:rgba(255,255,255,.32); }
-#lb-prev { left:-22px; }
-#lb-next { right:-22px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.product-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.07); cursor: pointer; transition: all .3s ease; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,.13); }
+.card-img-wrapper { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: linear-gradient(135deg,#eef3f8,#dde6ee); display: flex; align-items: center; justify-content: center; }
+.card-img-wrapper img { max-width: 92%; max-height: 92%; object-fit: contain; transition: .35s; filter: drop-shadow(0 2px 8px rgba(0,0,0,.1)); }
+.product-card:hover .card-img-wrapper img { transform: scale(1.05); zoom-icon: 1.06; }
+.zoom-badge { position:absolute;bottom:10px;right:10px;background:rgba(13,42,74,.75);color:#fff;font-size:11px;padding:3px 10px;border-radius:12px;pointer-events:none;backdrop-filter:blur(4px); }
+.card-info { padding: 16px 18px 18px; }
+.card-info h4 { font-size: 17px; color: #0d2a4a; margin-bottom: 6px; }
+.card-info .detail-count { font-size: 13px; color: #888; }
+.card-info .detail-count b { color: #3498db; }
 
-/* 底部信息 */
-#lb-info {
-  margin-top:14px; color:rgba(255,255,255,.85);
-  font-size:.9rem; text-align:center; line-height:1.6;
-}
-#lb-counter { color:var(--accent); font-weight:700; }
+/* ===== 灯箱（Lightbox）===== */
+.lightbox-overlay { display:none; position:fixed; top:0;left:0;right:0;bottom:0;z-index:9999; background:rgba(0,0,0,.90); backdrop-filter:blur(6px); animation:fadeIn .25s ease; }
+.lightbox-overlay.active { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.lightbox-close { position:absolute; top:16px; right:22px; color:#fff; font-size:36px; background:none; border:none; cursor:pointer; z-index:10001; width:48px;height:48px;line-height:44px;text-align:center;border-radius:50%;transition:.2s; }
+.lightbox-close:hover { background:rgba(255,255,255,.12); }
+.lb-title { color:#fff; font-size:18px; font-weight:600; margin-bottom:14px; letter-spacing:1px; }
+.lb-main { max-width:85vw; max-height:58vh; object-fit:contain; border-radius:6px; box-shadow:0 8px 40px rgba(0,0,0,.5); user-select:none; -webkit-user-drag:none; }
+.lb-nav { display:flex; align-items:center; gap:18px; margin-top:16px; }
+.lb-arrow { width:46px;height:46px;border-radius:50%;border:2px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0; }
+.lb-arrow:hover { background:rgba(255,255,255,.15);border-color:#fff; }
+.lb-counter { color:rgba(255,255,255,.7);font-size:14px;min-width:80px;text-align:center;white-space:nowrap; }
+.lb-thumbs { display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;justify-content:center; max-width:85vw; }
+.lb-thumb { width:68px;height:48px;border-radius:6px;overflow:hidden;cursor:pointer;border:2.5px solid transparent;transition:.2s; opacity:.55; flex-shrink:0; }
+.lb-thumb:hover, .lb-thumb.active { border-color:#3498db; opacity:1; }
+.lb-thumb img { width:100%;height:100%;object-fit:contain;background:#1a1a2e;border-radius:4px; }
+.lb-hint { color:rgba(255,255,255,.4);font-size:12px;margin-top:12px;letter-spacing:.5px; }
 
-/* 缩略图条 */
-#lb-thumbs {
-  display:flex; gap:8px; margin-top:12px;
-  overflow-x:auto; max-width:min(90vw,820px);
-  padding-bottom:4px;
-}
-#lb-thumbs::-webkit-scrollbar { height:4px; }
-#lb-thumbs::-webkit-scrollbar-thumb { background:rgba(255,255,255,.3); border-radius:2px; }
-.lb-thumb {
-  flex-shrink:0; width:60px; height:45px; border-radius:4px;
-  overflow:hidden; cursor:pointer; border:2px solid transparent;
-  opacity:.6; transition: opacity var(--trans), border-color var(--trans);
-}
-.lb-thumb img { width:100%; height:100%; object-fit:cover; }
-.lb-thumb.active { border-color:var(--accent); opacity:1; }
+/* ===== 公司介绍 ===== */
+.about { background: #fff; padding: 65px 0; }
+.about-grid { display:grid; grid-template-columns: 1fr 1fr; gap:50px; align-items:center; }
+.about-text h2 { font-size:30px;color:#0d2a4a;margin-bottom:18px; }
+.about-text h2::after { content:'';display:block;width:48px;height:3.5px;background:#3498db;margin:10px 0 18px;border-radius:2px; }
+.about-text p { color:#555;font-size:15.5px;line-height:1.85;margin-bottom:14px; }
+.about-stats { display:grid; grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px; }
+.stat-item { text-align:center;padding:18px 8px;background:#f5f8fc;border-radius:8px;border:1px solid #e8eef4; }
+.stat-num { font-size:30px;font-weight:800;color:#0d2a4a; }
+.stat-label { font-size:13px;color:#777;margin-top:4px; }
+.about-img { border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,.09); }
+.about-img img { width:100%;height:340px;object-fit:cover; display:block; }
 
-/* 关闭按钮 */
-#lb-close {
-  position:fixed; top:18px; right:22px;
-  background:none; border:none; color:#fff; font-size:2rem;
-  cursor:pointer; line-height:1; z-index:10000;
-  transition: color var(--trans);
-}
-#lb-close:hover { color:var(--accent); }
+/* ===== 联系方式 ===== */
+.contact { background:linear-gradient(135deg,#0d2a4a 0%,#16426a 100%);padding:65px 0;color:#fff; }
+.contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px; }
+.ct-card { background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:28px 22px;text-align:center;transition:.25s; backdrop-filter: blur(4px); }
+.ct-card:hover { background:rgba(255,255,255,.12);transform:translateY(-4px); }
+.ct-icon { font-size:36px;margin-bottom:12px; }
+.ct-card h4 { font-size:17px;margin-bottom:8px; }
+.ct-card p { font-size:15px;opacity:.85;line-height:1.7; }
+.ct-card a { color:#5cc9f5;text-decoration:none; }
 
-/* ============================================================
-   公司介绍 & 优势
-============================================================ */
-.about-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;
-  max-width:900px; margin:0 auto;
-}
-.about-text p { line-height:1.9; color:#444; margin-bottom:12px; font-size:.95rem; }
-.about-stats { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.stat-box {
-  background:#fff; border-radius:var(--radius); padding:20px;
-  text-align:center; box-shadow:var(--shadow);
-  border-top:3px solid var(--accent);
-}
-.stat-box .num { font-size:2rem; font-weight:700; color:var(--blue); }
-.stat-box .label { font-size:.82rem; color:#666; margin-top:4px; }
+/* ===== 页脚 ===== */
+.footer { background:#081d33;color:rgba(255,255,255,.55);text-align:center;padding:24px;font-size:13px; }
+.footer a { color:#5cc9f5;text-decoration:none; }
 
-.advantage-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; }
-.adv-card {
-  background:#fff; border-radius:var(--radius); padding:24px 20px;
-  box-shadow:var(--shadow); text-align:center;
-  border-bottom:3px solid transparent;
-  transition: border-color var(--trans), transform var(--trans);
-}
-.adv-card:hover { border-color:var(--accent); transform:translateY(-4px); }
-.adv-icon { font-size:2.2rem; margin-bottom:10px; }
-.adv-card h3 { font-size:.95rem; color:var(--blue); margin-bottom:6px; }
-.adv-card p  { font-size:.82rem; color:#666; line-height:1.7; }
-
-/* ============================================================
-   联系方式
-============================================================ */
-.contact-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; max-width:800px; margin:0 auto; }
-.contact-card {
-  background:#fff; border-radius:var(--radius); padding:22px 18px;
-  text-align:center; box-shadow:var(--shadow);
-}
-.contact-card .icon { font-size:2rem; margin-bottom:8px; }
-.contact-card h3 { font-size:.85rem; color:#888; margin-bottom:6px; }
-.contact-card p  { font-size:1rem; font-weight:700; color:var(--blue); }
-
-/* ============================================================
-   页脚
-============================================================ */
-footer {
-  background:var(--blue); color:rgba(255,255,255,.7);
-  text-align:center; padding:22px 5%;
-  font-size:.82rem; line-height:1.8;
-}
-footer strong { color:#fff; }
-
-/* ============================================================
-   响应式
-============================================================ */
-@media (max-width:768px) {
-  nav { display:none; }
-  .menu-btn { display:flex; }
-  .about-grid { grid-template-columns:1fr; }
-  #lb-prev { left:-14px; }
-  #lb-next { right:-14px; }
-  .product-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:16px; }
+/* ===== 手机适配 ===== */
+@media (max-width: 768px) {
+  .navbar { padding:0 16px; height:56px; }
+  .nav-logo { font-size:16px; }
+  .nav-links { display:none; position:absolute;top:56px;left:0;right:0;background:#0d2a4a;flex-direction:column;padding:16px;gap:0;box-shadow:0 4px 12px rgba(0,0,0,.3); }
+  .nav-links.open { display:flex; }
+  .nav-links li a { display:block;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08); }
+  .hamburger { display:flex; }
+  .hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+  .hero { height:320px; margin-top:56px; }
+  .hero h1 { font-size:26px; letter-spacing:1px; }
+  .hero p { font-size:15px; }
+  .section-title h2 { font-size:24px; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+  .prod-header h3 { font-size:19px; }
+  .about-grid { grid-template-columns:1fr; gap:30px; }
+  .about-stats { grid-template-columns:repeat(3,1fr);gap:8px; }
+  .stat-item { padding:12px 4px; }
+  .stat-num { font-size:22px; }
+  .lb-main { max-height:42vh; max-width:94vw; }
+  .lb-thumb { width:52px;height:38px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════ 导航 ══════════════════ -->
-<header>
-  <div class="logo">鑫金顿<span>电气</span></div>
-  <nav>
-    <a href="#products">产品展示</a>
-    <a href="#about">公司介绍</a>
-    <a href="#advantage">核心优势</a>
-    <a href="#contact">联系我们</a>
-  </nav>
-  <div class="menu-btn" id="menuBtn" onclick="toggleNav()">
+<!-- ==================== 导航栏 ==================== -->
+<nav class="navbar">
+  <a href="#" class="nav-logo">福建<span>鑫金顿</span>电气</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">首页</a></li>
+    <li><a href="#products">产品中心</a></li>
+    <li><a href="#about">关于我们</a></li>
+    <li><a href="#contact">联系方式</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open');this.classList.toggle('open')" aria-label="菜单">
     <span></span><span></span><span></span>
-  </div>
-</header>
-<div class="nav-mobile" id="navMobile">
-  <a href="#products" onclick="toggleNav()">产品展示</a>
-  <a href="#about"    onclick="toggleNav()">公司介绍</a>
-  <a href="#advantage"onclick="toggleNav()">核心优势</a>
-  <a href="#contact"  onclick="toggleNav()">联系我们</a>
-</div>
+  </button>
+</nav>
 
-<!-- ══════════════════ Hero ══════════════════ -->
-<section class="hero">
-  <h1>福建鑫金顿电气有限公司</h1>
-  <p>专业生产各类市政杆件、监控立杆、对讲立柱、配电箱及变电站配套设施<br>工厂直营 · 品质保障 · 支持定制</p>
-  <div class="hero-tags">
-    <span>🏭 2500㎡ 自有工厂</span>
-    <span>✅ 热镀锌工艺</span>
-    <span>🚀 快速交货</span>
-    <span>📐 支持非标定制</span>
-    <span>🔩 配件齐全</span>
+<!-- ==================== Banner ==================== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>专业<b>安防杆件</b>与<br><b>电力钢构架</b>制造商</h1>
+    <p>监控立杆 · 对讲立柱 · 交通设施杆件 · 监控箱/配电箱<br>变电站配套钢架 — 一站式定制服务</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">查看产品</a>
+      <a href="#contact" class="btn-outline">联系我们</a>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════════ 产品展示 ══════════════════ -->
-<section id="products">
-  <h2 class="sec-title">产品展示</h2>
-  <div class="product-grid">
+<!-- ==================== 产品中心 ==================== -->
+<section class="products container" id="products">
 
-    <!-- 对讲立柱 -->
-    <div class="product-card" onclick="openLightbox('intercom')">
-      <div class="thumb">
-        <img src="images/intercom-main.png" alt="对讲立柱" loading="lazy">
-      </div>
-      <div class="card-body">
-        <div class="card-title">对讲立柱</div>
-        <div class="card-sub">SHLZ 系列 · 不锈钢/碳钢可选</div>
-        <div class="detail-count">📷 点击查看 20 张细节图</div>
+  <!-- ── 对讲立柱 ── -->
+  <div class="prod-section">
+    <div class="prod-header">
+      <div class="icon-bar"></div>
+      <h3>对讲立柱</h3>
+      <p class="desc">可视对讲系统专用立柱 · 防腐耐用</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" data-group="intercom"
+           data-images='["images/intercom-main.png","images/intercom-detail-01.png","images/intercom-detail-02.png","images/intercom-detail-03.png","images/intercom-detail-04.png","images/intercom-detail-05.png","images/intercom-detail-06.png","images/intercom-detail-07.png","images/intercom-detail-08.png","images/intercom-detail-09.png","images/intercom-detail-10.png","images/intercom-detail-11.png"]'
+           data-name="对讲立柱">
+        <div class="card-img-wrapper"><img src="images/intercom-main.png" alt="对讲立柱主图" loading="lazy"><span class="zoom-badge">🔍 点击放大</span></div>
+        <div class="card-info"><h4>对讲立柱</h4><p class="detail-count"><b>12</b> 张细节图</p></div>
       </div>
     </div>
-
-    <!-- 监控立杆 -->
-    <div class="product-card" onclick="openLightbox('monitor')">
-      <div class="thumb">
-        <img src="images/monitor-main.jpg" alt="监控立杆" loading="lazy">
-      </div>
-      <div class="card-body">
-        <div class="card-title">监控立杆（组合杆）</div>
-        <div class="card-sub">单悬臂 / 双悬臂 · 热镀锌处理</div>
-        <div class="detail-count">📷 点击查看 26 张细节图</div>
-      </div>
-    </div>
-
-    <!-- 八角杆（交通设施杆件） -->
-    <div class="product-card" onclick="openLightbox('octagonal')">
-      <div class="thumb">
-        <img src="images/octagonal-main.jpg" alt="八角杆" loading="lazy">
-      </div>
-      <div class="card-body">
-        <div class="card-title">交通设施杆件（八角杆）</div>
-        <div class="card-sub">3.5 m – 6.5 m · 枪机/球机款</div>
-        <div class="detail-count">📷 点击查看 13 张细节图</div>
-      </div>
-    </div>
-
-    <!-- 监控箱/配电箱 -->
-    <div class="product-card" onclick="openLightbox('box')">
-      <div class="thumb">
-        <img src="images/box-main.png" alt="监控箱/配电箱" loading="lazy">
-      </div>
-      <div class="card-body">
-        <div class="card-title">监控箱 / 配电箱</div>
-        <div class="card-sub">201 不锈钢 · 壁挂/抱箍款</div>
-        <div class="detail-count">📷 点击查看 21 张细节图</div>
-      </div>
-    </div>
-
-    <!-- 变电站配套钢架 -->
-    <div class="product-card" onclick="openLightbox('substation')">
-      <div class="thumb">
-        <img src="images/substation-main.jpg" alt="变电站配套钢架" loading="lazy">
-      </div>
-      <div class="card-body">
-        <div class="card-title">变电站配套钢架</div>
-        <div class="card-sub">门型构架 · 大铁架 · 热镀锌</div>
-        <div class="detail-count">📷 点击查看 6 张细节图</div>
-      </div>
-    </div>
-
   </div>
+
+  <!-- ── 监控立杆 ── -->
+  <div class="prod-section">
+    <div class="prod-header">
+      <div class="icon-bar"></div>
+      <h3>监控立杆</h3>
+      <p class="desc">室外监控摄像机专用支架 · 多规格可选</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" data-group="monitor"
+           data-images='["images/monitor-main.jpg","images/monitor-detail-01.png","images/monitor-detail-02.png","images/monitor-detail-03.png","images/monitor-detail-04.png","images/monitor-detail-05.png","images/monitor-detail-06.png","images/monitor-detail-07.png","images/monitor-detail-26.png"]'
+           data-name="监控立杆">
+        <div class="card-img-wrapper"><img src="images/monitor-main.jpg" alt="监控立杆主图" loading="lazy"><span class="zoom-badge">🔍 点击放大</span></div>
+        <div class="card-info"><h4>监控立杆</h4><p class="detail-count"><b>9</b> 张细节图</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 交通设施杆件（八角杆） ── -->
+  <div class="prod-section">
+    <div class="prod-header">
+      <div class="icon-bar"></div>
+      <h3>交通设施杆件</h3>
+      <p class="desc">八角监控杆 · 枪机球机专用 · 热镀锌防腐</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" data-group="octagonal"
+           data-images='["images/octagonal-main.jpg","images/octagonal-detail-01.png","images/octagonal-detail-02.png","images/octagonal-detail-03.png","images/octagonal-detail-04.png","images/octagonal-detail-05.png","images/octagonal-detail-06.png","images/octagonal-detail-07.png","images/octagonal-detail-08.png","images/octagonal-detail-09.png","images/octagonal-detail-10.png","images/octagonal-detail-11.png","images/octagonal-detail-12.png","images/octagonal-detail-13.png"]'
+           data-name="八角杆">
+        <div class="card-img-wrapper"><img src="images/octagonal-main.jpg" alt="八角杆主图" loading="lazy"><span class="zoom-badge">🔍 点击放大</span></div>
+        <div class="card-info"><h4>八角杆</h4><p class="detail-count"><b>14</b> 张细节图</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 监控箱/配电箱 ── -->
+  <div class="prod-section">
+    <div class="prod-header">
+      <div class="icon-bar"></div>
+      <h3>监控箱 / 配电箱</h3>
+      <p class="desc">不锈钢监控箱 · 室外防水配电箱 · 壁挂/抱箍安装</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" data-group="box"
+           data-images='["images/box-main.png","images/box-detail-01.png","images/box-detail-02.png","images/box-detail-03.png","images/box-detail-04.png","images/box-detail-05.png","images/box-detail-06.png","images/box-detail-07.png","images/box-detail-08.png","images/box-detail-09.png","images/box-detail-10.png","images/box-detail-11.png","images/box-detail-12.png","images/box-detail-13.png","images/box-detail-14.png","images/box-detail-15.png","images/box-detail-16.png","images/box-detail-17.png","images/box-detail-18.png","images/box-detail-19.png","images/box-detail-20.png","images/box-detail-21.png"]'
+           data-name="监控箱/配电箱">
+        <div class="card-img-wrapper"><img src="images/box-main.png" alt="监控箱主图" loading="lazy"><span class="zoom-badge">🔍 点击放大</span></div>
+        <div class="card-info"><h4>监控箱 / 配电箱</h4><p class="detail-count"><b>22</b> 张细节图</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 变电站配套钢架 ── -->
+  <div class="prod-section">
+    <div class="prod-header">
+      <div class="icon-bar"></div>
+      <h3>变电站配套钢架</h3>
+      <p class="desc">热镀锌变电站构架 · 门型构架 · 大铁架</p>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" data-group="substation"
+           data-images='["images/substation-main.jpg","images/substation-detail-01.png","images/substation-detail-02.png","images/substation-detail-03.png","images/substation-detail-04.png","images/substation-detail-05.png","images/substation-detail-06.png"]'
+           data-name="变电站钢架">
+        <div class="card-img-wrapper"><img src="images/substation-main.jpg" alt="变电站钢架主图" loading="lazy"><span class="zoom-badge">🔍 点击放大</span></div>
+        <div class="card-info"><h4>变电站配套钢架</h4><p class="detail-count"><b>7</b> 张细节图</p></div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<!-- ══════════════════ 公司介绍 ══════════════════ -->
-<section id="about">
-  <h2 class="sec-title">公司介绍</h2>
-  <div class="about-grid">
+<!-- ==================== 关于我们 ==================== -->
+<section class="about" id="about">
+  <div class="container about-grid">
     <div class="about-text">
-      <p>福建鑫金顿电气有限公司，坐落于福建省，拥有 <strong>2500 平方米</strong> 自有生产工厂，是专注市政配套电气设施生产的工厂型企业。</p>
-      <p>公司主营产品涵盖 <strong>对讲立柱、监控立杆、交通设施杆件、监控箱/配电箱、变电站配套钢架</strong> 五大系列，广泛应用于城市安防、智慧社区、变电站工程、道路交通等领域。</p>
-      <p>所有产品均采用热镀锌工艺，具备出色的防腐耐候性能，支持按图纸非标定制，可承接各类市政工程配套供货。</p>
-      <p>联系电话：<strong>15606035500</strong> &nbsp;|&nbsp; 微信：<strong>llx34532958</strong></p>
+      <h2>关于鑫金顿</h2>
+      <p>福建鑫金顿电气有限公司是一家专注于<strong>安防监控杆件、智能交通设施及电力钢结构</strong>研发与制造的企业。公司坐落于福建省泉州市，拥有<strong>2500平方米现代化生产基地</strong>，配备数控切割、自动焊接、热镀锌等完整生产线。</p>
+      <p>我们的产品广泛应用于智慧城市、高速公路监控、小区安防、变电站建设等领域，以过硬的品质和完善的售后服务赢得了客户的长期信赖。</p>
+      <p>每一根立柱、每一个配电箱都经过严格的出厂检验，确保在恶劣户外环境中依然稳固可靠。</p>
+      <div class="about-stats">
+        <div class="stat-item"><div class="stat-num">2500m²</div><div class="stat-label">生产车间</div></div>
+        <div class="stat-item"><div class="stat-num">5+</div><div class="stat-label">产品系列</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">出厂检验</div></div>
+      </div>
     </div>
-    <div class="about-stats">
-      <div class="stat-box"><div class="num">2500<small>㎡</small></div><div class="label">自有工厂面积</div></div>
-      <div class="stat-box"><div class="num">5+</div><div class="label">核心产品系列</div></div>
-      <div class="stat-box"><div class="num">10+</div><div class="label">行业服务年限</div></div>
-      <div class="stat-box"><div class="num">100%</div><div class="label">热镀锌工艺覆盖</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ 核心优势 ══════════════════ -->
-<section id="advantage">
-  <h2 class="sec-title">核心优势</h2>
-  <div class="advantage-grid">
-    <div class="adv-card">
-      <div class="adv-icon">🏭</div>
-      <h3>工厂直营</h3>
-      <p>无中间商，出厂价供货，同等品质价格更低。</p>
-    </div>
-    <div class="adv-card">
-      <div class="adv-icon">🔩</div>
-      <h3>热镀锌工艺</h3>
-      <p>全系列热镀锌处理，户外使用 10 年以上不生锈。</p>
-    </div>
-    <div class="adv-card">
-      <div class="adv-icon">📐</div>
-      <h3>非标定制</h3>
-      <p>按客户图纸/尺寸定制，满足各类工程特殊需求。</p>
-    </div>
-    <div class="adv-card">
-      <div class="adv-icon">🚚</div>
-      <h3>快速交货</h3>
-      <p>库存充足，常规规格当天发货，急单优先安排。</p>
-    </div>
-    <div class="adv-card">
-      <div class="adv-icon">📦</div>
-      <h3>配件齐全</h3>
-      <p>杆体、悬臂、抱箍、箱体一站式采购，省心省力。</p>
-    </div>
-    <div class="adv-card">
-      <div class="adv-icon">🛡️</div>
-      <h3>质量保障</h3>
-      <p>严格出厂检验，问题产品无条件补换，售后无忧。</p>
+    <div class="about-img">
+      <img src="images/substation-main.jpg" alt="工厂实力" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ 联系我们 ══════════════════ -->
-<section id="contact">
-  <h2 class="sec-title">联系我们</h2>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <div class="icon">📞</div>
-      <h3>联系电话</h3>
-      <p>15606035500</p>
-    </div>
-    <div class="contact-card">
-      <div class="icon">💬</div>
-      <h3>微信号</h3>
-      <p>llx34532958</p>
-    </div>
-    <div class="contact-card">
-      <div class="icon">📧</div>
-      <h3>业务邮箱</h3>
-      <p>34532958@qq.com</p>
-    </div>
-    <div class="contact-card">
-      <div class="icon">🏭</div>
-      <h3>工厂面积</h3>
-      <p>2500 平方米</p>
+<!-- ==================== 联系方式 ==================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title" style="padding-top:0"><h2 style="color:#fff;">联系我们</h2><p style="color:rgba(255,255,255,.65)">欢迎来电咨询或实地考察，我们将为您提供最优方案与报价</p></div>
+    <div class="contact-grid">
+      <div class="ct-card">
+        <div class="ct-icon">📞</div>
+        <h4>联系电话</h4>
+        <p><a href="tel:15606035500">15606035500</a></p>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">💬</div>
+        <h4>微信咨询</h4>
+        <p><strong style="color:#fff">llx34532958</strong></p>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">📧</div>
+        <h4>业务邮箱</h4>
+        <p><a href="mailto:34532958@qq.com">34532958@qq.com</a></p>
+      </div>
+      <div class="ct-card">
+        <div class="ct-icon">🏭</div>
+        <h4>公司地址</h4>
+        <p>福建省泉州市<br><small style="opacity:.6">2500㎡生产基地</small></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ 页脚 ══════════════════ -->
-<footer>
-  <strong>福建鑫金顿电气有限公司</strong><br>
-  电话：15606035500 &nbsp;|&nbsp; 微信：llx34532958 &nbsp;|&nbsp; 邮箱：34532958@qq.com<br>
-  <span style="font-size:.75rem;color:rgba(255,255,255,.45);">© 2026 福建鑫金顿电气有限公司 版权所有</span>
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer">
+  <p>&copy; 2026 福建鑫金顿电气有限公司 版权所有 &nbsp;|&nbsp; <a href="#">闽ICP备xxxxx号</a></p>
 </footer>
 
-<!-- ══════════════════ 灯箱弹窗 ══════════════════ -->
-<div id="lightbox">
-  <button id="lb-close" onclick="closeLightbox()">✕</button>
-  <div id="lb-wrap">
-    <button class="lb-arrow" id="lb-prev" onclick="lbStep(-1)">&#8249;</button>
-    <div id="lb-img-box">
-      <img id="lb-img" src="" alt="">
-    </div>
-    <button class="lb-arrow" id="lb-next" onclick="lbStep(1)">&#8250;</button>
-    <div id="lb-info">
-      <span id="lb-title"></span> &nbsp;
-      <span id="lb-counter"></span>
-    </div>
-    <div id="lb-thumbs"></div>
+<!-- ==================== 灯箱弹窗 ==================== -->
+<div class="lightbox-overlay" id="lbOverlay">
+  <button class="lightbox-close" id="lbClose" aria-label="关闭">&times;</button>
+  <div class="lb-title" id="lbTitle"></div>
+  <img class="lb-main" id="lbMain" src="" alt="">
+  <div class="lb-nav">
+    <button class="lb-arrow" id="lbPrev" aria-label="上一张">&#10094;</button>
+    <span class="lb-counter" id="lbCounter"></span>
+    <button class="lb-arrow" id="lbNext" aria-label="下一张">&#10095;</button>
   </div>
+  <div class="lb-thumbs" id="lbThumbs"></div>
+  <div class="lb-hint">← → 切换图片 &nbsp; ESC 关闭 &nbsp; 点击缩略图跳转</div>
 </div>
 
-<!-- ══════════════════ JavaScript ══════════════════ -->
 <script>
-// ── 产品数据 ────────────────────────────────────────────────
-const PRODUCTS = {
-  intercom: {
-    name: "对讲立柱",
-    main: "images/intercom-main.png",
-    details: [
-      "images/intercom-detail-01.png","images/intercom-detail-02.png",
-      "images/intercom-detail-03.png","images/intercom-detail-04.png",
-      "images/intercom-detail-05.png","images/intercom-detail-06.png",
-      "images/intercom-detail-07.png","images/intercom-detail-08.png",
-      "images/intercom-detail-09.png","images/intercom-detail-10.png",
-      "images/intercom-detail-11.png","images/intercom-detail-12.png",
-      "images/intercom-detail-13.png","images/intercom-detail-14.png",
-      "images/intercom-detail-15.png","images/intercom-detail-16.png",
-      "images/intercom-detail-17.png","images/intercom-detail-18.png",
-      "images/intercom-detail-19.png","images/intercom-detail-20.png"
-    ]
-  },
-  monitor: {
-    name: "监控立杆（组合杆）",
-    main: "images/monitor-main.jpg",
-    details: [
-      "images/monitor-detail-01.png","images/monitor-detail-02.png",
-      "images/monitor-detail-03.png","images/monitor-detail-04.png",
-      "images/monitor-detail-05.png","images/monitor-detail-06.png",
-      "images/monitor-detail-07.png","images/monitor-detail-08.png",
-      "images/monitor-detail-09.png","images/monitor-detail-10.png",
-      "images/monitor-detail-11.png","images/monitor-detail-12.png",
-      "images/monitor-detail-13.png","images/monitor-detail-14.png",
-      "images/monitor-detail-15.png","images/monitor-detail-16.png",
-      "images/monitor-detail-17.png","images/monitor-detail-18.png",
-      "images/monitor-detail-19.png","images/monitor-detail-20.png",
-      "images/monitor-detail-21.png","images/monitor-detail-22.png",
-      "images/monitor-detail-23.png","images/monitor-detail-24.png",
-      "images/monitor-detail-25.png","images/monitor-detail-26.png"
-    ]
-  },
-  octagonal: {
-    name: "交通设施杆件（八角杆）",
-    main: "images/octagonal-main.jpg",
-    details: [
-      "images/octagonal-detail-01.png","images/octagonal-detail-02.png",
-      "images/octagonal-detail-03.png","images/octagonal-detail-04.png",
-      "images/octagonal-detail-05.png","images/octagonal-detail-06.png",
-      "images/octagonal-detail-07.png","images/octagonal-detail-08.png",
-      "images/octagonal-detail-09.png","images/octagonal-detail-10.png",
-      "images/octagonal-detail-11.png","images/octagonal-detail-12.png",
-      "images/octagonal-detail-13.png"
-    ]
-  },
-  box: {
-    name: "监控箱 / 配电箱",
-    main: "images/box-main.png",
-    details: [
-      "images/box-detail-01.png","images/box-detail-02.png",
-      "images/box-detail-03.png","images/box-detail-04.png",
-      "images/box-detail-05.png","images/box-detail-06.png",
-      "images/box-detail-07.png","images/box-detail-08.png",
-      "images/box-detail-09.png","images/box-detail-10.png",
-      "images/box-detail-11.png","images/box-detail-12.png",
-      "images/box-detail-13.png","images/box-detail-14.png",
-      "images/box-detail-15.png","images/box-detail-16.png",
-      "images/box-detail-17.png","images/box-detail-18.png",
-      "images/box-detail-19.png","images/box-detail-20.png",
-      "images/box-detail-21.png"
-    ]
-  },
-  substation: {
-    name: "变电站配套钢架",
-    main: "images/substation-main.jpg",
-    details: [
-      "images/substation-detail-01.png","images/substation-detail-02.png",
-      "images/substation-detail-03.png","images/substation-detail-04.png",
-      "images/substation-detail-05.png","images/substation-detail-06.png"
-    ]
-  }
-};
+// ========== 灯箱核心逻辑 ==========
+var lb = document.getElementById('lbOverlay'),
+    lbImg = document.getElementById('lbMain'),
+    lbTitle = document.getElementById('lbTitle'),
+    lbCounter = document.getElementById('lbCounter'),
+    lbThumbs = document.getElementById('lbThumbs'),
+    curGroup = '', curIdx = 0, curImages = [];
 
-// ── 灯箱状态 ───────────────────────────────────────────────
-let curProduct = null;
-let curIndex   = 0;   // 0 = 主图，1+ = 细节图（index-1）
-
-function openLightbox(key) {
-  curProduct = key;
-  curIndex   = 0;
-  renderLightbox();
-  document.getElementById("lightbox").classList.add("active");
-  document.body.style.overflow = "hidden";
+function openLightbox(card) {
+  curGroup = card.dataset.group;
+  try { curImages = JSON.parse(card.dataset.images); } catch(e) { curImages = []; }
+  if (!curImages.length) return;
+  curIdx = 0;
+  lbTitle.textContent = card.dataset.name || '';
+  renderThumbs();
+  showImage();
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
 function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-  document.body.style.overflow = "";
-}
-function lbStep(dir) {
-  const p = PRODUCTS[curProduct];
-  const total = 1 + p.details.length;
-  curIndex = (curIndex + dir + total) % total;
-  renderLightbox();
-}
-function goThumb(i) {
-  curIndex = i;
-  renderLightbox();
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
 }
 
-function renderLightbox() {
-  const p = PRODUCTS[curProduct];
-  const allImgs = [p.main, ...p.details];
-  const total   = allImgs.length;
-
-  document.getElementById("lb-img").src  = allImgs[curIndex];
-  document.getElementById("lb-img").alt  = p.name;
-  document.getElementById("lb-title").textContent   = p.name;
-  document.getElementById("lb-counter").textContent = (curIndex+1) + " / " + total;
-
-  // 缩略图
-  const box = document.getElementById("lb-thumbs");
-  box.innerHTML = "";
-  allImgs.forEach((src, i) => {
-    const d   = document.createElement("div");
-    d.className = "lb-thumb" + (i === curIndex ? " active" : "");
-    d.onclick   = () => goThumb(i);
-    const img   = document.createElement("img");
-    img.src     = src; img.loading = "lazy";
-    d.appendChild(img);
-    box.appendChild(d);
-  });
-  // 滚动当前缩略图到可视区
-  const active = box.querySelector(".lb-thumb.active");
-  if (active) active.scrollIntoView({ block:"nearest", inline:"center", behavior:"smooth" });
+function showImage() {
+  if (!curImages[curIdx]) { closeLightbox(); return; }
+  lbImg.src = curImages[curIdx];
+  lbCounter.textContent = (curIdx + 1) + ' / ' + curImages.length;
+  var thumbs = lbThumbs.querySelectorAll('.lb-thumb');
+  for (var i = 0; i < thumbs.length; i++) {
+    thumbs[i].classList.toggle('active', parseInt(thumbs[i].dataset.idx) === curIdx);
+  }
 }
 
-// 键盘导航
-document.addEventListener("keydown", e => {
-  if (!document.getElementById("lightbox").classList.contains("active")) return;
-  if (e.key === "ArrowLeft")  lbStep(-1);
-  if (e.key === "ArrowRight") lbStep(1);
-  if (e.key === "Escape")     closeLightbox();
+function goNext() { if (curIdx < curImages.length - 1) { curIdx++; showImage(); } }
+function goPrev() { if (curIdx > 0) { curIdx--; showImage(); } }
+
+function renderThumbs() {
+  lbThumbs.innerHTML = '';
+  for (var i = 0; i < curImages.length; i++) {
+    (function(idx) {
+      var t = document.createElement('div');
+      t.className = 'lb-thumb' + (idx === 0 ? ' active' : '');
+      t.dataset.idx = idx;
+      t.innerHTML = '<img src="' + curImages[idx] + '" alt="' + idx + '">';
+      t.onclick = function() { curIdx = idx; showImage(); };
+      lbThumbs.appendChild(t);
+    })(i);
+  }
+}
+
+// 绑定卡片点击
+document.querySelectorAll('.product-card').forEach(function(card) {
+  card.onclick = function() { openLightbox(this); };
 });
 
-// 点击遮罩关闭
-document.getElementById("lightbox").addEventListener("click", function(e) {
-  if (e.target === this) closeLightbox();
+// 关闭按钮
+document.getElementById('lbClose').onclick = closeLightbox;
+lb.onclick = function(e) { if (e.target === lb) closeLightbox(); };
+
+// 导航按钮
+document.getElementById('lbNext').onclick = goNext;
+document.getElementById('lbPrev').onclick = goPrev;
+
+// 键盘控制
+document.addEventListener('keydown', function(e) {
+  if (!lb.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowRight') goNext();
+  else if (e.key === 'ArrowLeft') goPrev();
 });
 
-// 手机端汉堡菜单
-function toggleNav() {
-  document.getElementById("navMobile").classList.toggle("open");
-}
+// ========== 导航高亮 ==========
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.onclick = function() {
+    document.querySelectorAll('.nav-links a').forEach(function(x){ x.classList.remove('active'); });
+    this.classList.add('active');
+    // 关闭手机菜单
+    document.getElementById('navLinks').classList.remove('open');
+    var hb = document.querySelector('.hamburger'); if(hb) hb.classList.remove('open');
+  };
+});
+
+// ========== 滚动时导航高亮 ==========
+window.addEventListener('scroll', function() {
+  var sections = ['home','products','about','contact'];
+  for (var s of sections) {
+    var el = document.getElementById(s);
+    if (!el) continue;
+    var rect = el.getBoundingClientRect();
+    if (rect.top <= 120 && rect.bottom > 120) {
+      document.querySelectorAll('.nav-links a').forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + s); });
+      break;
+    }
+  };
+});
 </script>
 </body>
 </html>
